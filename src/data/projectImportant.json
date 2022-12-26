@@ -1,0 +1,23 @@
+[
+  {
+    "Title": "Disdroinka landing page",
+    "Link": "test",
+    "Repository": "test",
+    "Stack": "HTML, CSS, JS, Bootstrap, jQuery",
+    "Image": "../assets/inka.png"
+  },
+  {
+    "Title": "Extraction of parameters from electrocardiographic signals",
+    "Link": "test",
+    "Repository": "test",
+    "Stack": "Python, Pandas, Numpy, Matplotlib, Scipy, Scikit-learn",
+    "Image": "../assets/ecg.png"
+  },
+  {
+    "Title": "Github finder",
+    "Link": "test",
+    "Repository": "test",
+    "Stack": "HTML, CSS, JS, Bootstrap, jQuery, Github API",
+    "Image": "../assets/github-finder.png"
+  }
+]

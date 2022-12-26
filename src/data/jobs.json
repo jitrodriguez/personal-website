@@ -1,0 +1,66 @@
+[
+  {
+    "ButtonTitle": "Banco Pichincha - Devsu",
+    "MainTitle": "Full Stack Chatbot Developer",
+    "RangeDate": "March 2021 - Present",
+    "Items": [
+      "Recognized as one of the top performers in Q1 in the backend chapter of the client's company.",
+      "Successful development of a cognitive assistant for process improvement of collaborators with Azure services (Bot service, Bot framework composer and LUIS) and integrating this service to microsoft teams.",
+      "Development of NodeJs archetype with NesJs framework for internal use of the backend chapter of the client's company."
+    ],
+    "Stack": [
+      "NodeJs",
+      "NesJs",
+      "Azure",
+      "Bot Service",
+      "Bot Framework Composer",
+      "LUIS",
+      "Microsoft Teams"
+    ]
+  },
+  {
+    "ButtonTitle": "Devsu",
+    "MainTitle": "Software Developer - Training",
+    "RangeDate": "January - February 2021",
+    "Items": [
+      "Training for software development with best practices.",
+      "Time estimation for the development of internal projects.",
+      "Support with the development of internal recruitment platform with NextJs framework."
+    ],
+    "Stack": ["NextJs", "ReactJs", "NodeJs", "MongoDB", "ExpressJs", "Git"]
+  },
+  {
+    "ButtonTitle": "Independent Teacher",
+    "MainTitle": "Python & Javascript Teacher",
+    "RangeDate": "January 2021 - Present",
+    "Items": [
+      "Teaching of programming from basic to advanced level in languages such as python and javascript.",
+      "Development and teaching of web scrapping applications for the stock market superintendence to obtain daily values of different companies for later analysis of investors."
+    ],
+    "Stack": ["Python", "Javascript", "NodeJs", "MongoDB", "ExpressJs", "Git"]
+  },
+
+  {
+    "ButtonTitle": "Distribuidora Inka",
+    "MainTitle": "IT-Support & Web Developer",
+    "RangeDate": "December 2020 - December 2021",
+    "Items": [
+      "Management of servers with Windows Server 2012R2 and 2016 operating system.",
+      "Implementation of business card generator (https://www.disdroinka.com/tarjeta) and signatures for business mail (https://www.disdroinka.com/firma-oficial).",
+      "Development of a system for tracking vendors in real time (NextJs - React Native).",
+      "Development of a landing page with NextJs and Firebase"
+    ],
+    "Stack": ["NextJs", "ReactJs", "NodeJs", "MongoDB", "ExpressJs", "Git"]
+  },
+  {
+    "ButtonTitle": "VascoTechnologies",
+    "MainTitle": "System Intern",
+    "RangeDate": "March - June 2021",
+    "Items": [
+      "Migration of e-commerce to wordpress and product quoting application, using automatic pdf generators and email alerts for analytics.",
+      "Creation of custom plugins for payment methods (Yape, Plin and Tunki).",
+      "Quick learning of the necessary tools to cover the solution (Wordpress and PHP)."
+    ],
+    "Stack": ["Wordpress", "PHP", "MySQL"]
+  }
+]
