@@ -1,0 +1,33 @@
+@use '../../../styles/colors' as colors;
+.project {
+  position: relative;
+  max-width: 24rem;
+}
+.projects {
+  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.project-descriptor {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(colors.$tertiary-color, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.project a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+}
+.link-external {
+  fill: white;
+}
+.link-external-button {
+  width: 1rem;
+}

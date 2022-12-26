@@ -1,0 +1,84 @@
+@use '../../../styles/colors' as colors;
+
+.navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  background-color: colors.$tertiary-color;
+  z-index: 20;
+  height: 4.5rem;
+
+  box-shadow: 0px 5px 5px -5px #000;
+}
+.nav-open {
+  -prefix-animation: slide-open 0.3s ease;
+  animation: slide-open 0.3s ease;
+}
+
+.nav-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  height: 40vh;
+  width: 100vw;
+  background-color: colors.$tertiary-color;
+  display: block;
+}
+.nav-buttons a {
+  color: colors.$accent-color;
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+  cursor: pointer;
+}
+.nav-buttons > a:not(:last-child) {
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.218);
+}
+.hamburger,
+.close {
+  fill: colors.$primary-color;
+}
+.hamburger-button,
+.close-button {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.5rem;
+  right: 0;
+  position: absolute;
+  top: 0.5rem;
+  cursor: pointer;
+}
+
+.hidden {
+  visibility: hidden;
+  display: none;
+}
+.nav-close {
+  height: 0px;
+  -prefix-animation: slide-close 0.3s ease;
+  animation: slide-close 0.3s ease;
+  overflow: hidden;
+}
+@keyframes slide-open {
+  from {
+    height: 0;
+  }
+  to {
+    height: 40vh;
+  }
+}
+@keyframes slide-close {
+  from {
+    height: 40vh;
+  }
+  to {
+    height: 0px;
+  }
+}

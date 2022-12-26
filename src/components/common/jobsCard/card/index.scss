@@ -1,0 +1,31 @@
+@use '../../../../styles/colors' as colors;
+
+.card {
+  margin: 0.5rem;
+  border: 0.5px solid colors.$secondary-color;
+  padding: 0.5rem;
+  border-radius: 3px;
+  background-color: colors.$tertiary-color;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  .dates {
+    color: colors.$secondary-color;
+  }
+}
+
+.card-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+.card-container.close {
+  display: none;
+}

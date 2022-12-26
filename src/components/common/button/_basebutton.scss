@@ -1,0 +1,22 @@
+@use '../../../styles/fonts' as fonts;
+@use '../../../styles/colors' as colors;
+
+.button {
+  text-decoration: none;
+  padding: 1rem;
+  border: 1px solid colors.$primary-color;
+  width: 8rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  background-color: colors.$tertiary-color;
+}
+.button:hover {
+  background-color: colors.$primary-color;
+  color: colors.$tertiary-color;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}

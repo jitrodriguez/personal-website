@@ -1,0 +1,44 @@
+@use 'colors';
+@use 'responsive';
+
+body {
+  background-color: colors.$tertiary-color;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0px;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+h2 {
+  color: colors.$accent-color;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+p,
+li {
+  color: colors.$text-color;
+  font-size: 1rem;
+  font-weight: 300;
+}
+section {
+  padding: 2rem;
+  padding-top: 4rem;
+  position: relative;
+}
+img {
+  z-index: -1;
+}
+h3 {
+  color: colors.$primary-color;
+}
+.github,
+.linkedin {
+  fill: white;
+}
+footer {
+  background-color: colors.$secondary-color;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}

@@ -1,0 +1,14 @@
+@use '../../../../styles/colors' as colors;
+.cls-1 {
+  fill: colors.$tertiary-color;
+  stroke: colors.$primary-color;
+  stroke-miterlimit: 10;
+  stroke-width: 8px;
+}
+.cls-2 {
+  fill: colors.$primary-color;
+}
+.logo {
+  width: 3rem;
+  padding: 0.5rem;
+}

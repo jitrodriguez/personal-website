@@ -1,0 +1,22 @@
+#contact {
+  height: 50vh;
+}
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+}
+.social-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 30%;
+}
+.social-buttons a {
+  width: 2rem;
+  display: flex;
+}

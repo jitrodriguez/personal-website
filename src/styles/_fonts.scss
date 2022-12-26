@@ -1,0 +1,11 @@
+@use 'colors';
+
+.primary-text {
+  color: colors.$primary-color;
+}
+.accent-text {
+  color: colors.$accent-color;
+}
+.text-center {
+  text-align: center;
+}
