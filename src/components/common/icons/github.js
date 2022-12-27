@@ -2,7 +2,10 @@ import React from 'react';
 
 export default function Github() {
   return (
-    <a href=''>
+    <a
+      href='https://github.com/jitrodriguez'
+      target='_blank'
+      rel='noopener noreferrer'>
       <svg width='100%' height='100%' viewBox='0 0 24 24'>
         <path
           fillRule='evenodd'
