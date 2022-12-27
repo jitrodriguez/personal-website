@@ -6,11 +6,11 @@
     "Items": [
       "Recognized as one of the top performers in Q1 in the backend chapter of the client's company.",
       "Successful development of a cognitive assistant for process improvement of collaborators with Azure services (Bot service, Bot framework composer and LUIS) and integrating this service to microsoft teams.",
-      "Development of NodeJs archetype with NesJs framework for internal use of the backend chapter of the client's company."
+      "Development of NodeJs archetype with NestJs framework for internal use of the backend chapter of the client's company."
     ],
     "Stack": [
       "NodeJs",
-      "NesJs",
+      "NestJs",
       "Azure",
       "Bot Service",
       "Bot Framework Composer",
