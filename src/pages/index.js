@@ -9,6 +9,7 @@ import Loader from '../components/sections/loader/loader';
 import Projects from '../components/sections/projects';
 import './../styles/index.scss';
 import { Seo } from '../components/seo/seo';
+import Bot from '../components/bot/bot';
 
 export default function Index() {
   // set is mounted and set to false
@@ -34,6 +35,7 @@ export default function Index() {
         <Loader />
       ) : (
         <>
+          <Bot />
           <NavBar variants={variants} />
           <Hero variants={variants} />
           <About variants={variants} />

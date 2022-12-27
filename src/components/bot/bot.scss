@@ -1,0 +1,51 @@
+@use './../../styles/colors' as colors;
+.bot-container {
+  position: -webkit-sticky;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 30;
+  .bot {
+    width: 18rem;
+    height: 26rem;
+    border: none;
+  }
+  .show-bot {
+    display: block;
+  }
+  .hide-bot {
+    display: none;
+  }
+
+  button {
+    border: none;
+    cursor: pointer;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    background-color: white;
+    position: relative;
+    svg {
+      height: 2.5rem;
+      width: 2.5rem;
+      fill: colors.$secondary-color;
+    }
+    .notification {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 1.5rem;
+      width: 1.5rem;
+      border-radius: 50%;
+      background-color: colors.$accent-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      font-size: 1rem;
+    }
+    .notification-close {
+      display: none;
+    }
+  }
+}
