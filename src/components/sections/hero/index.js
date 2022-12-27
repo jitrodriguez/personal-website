@@ -1,9 +1,14 @@
 import React from 'react';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import './index.scss';
-export default function Hero() {
+import { motion } from 'framer-motion';
+export default function Hero({ variants }) {
   return (
-    <section className='hero'>
+    <motion.section
+      initial='hidden'
+      animate='visible'
+      variants={variants}
+      className='hero'>
       <p className='primary-text text-center'>Hi I'm</p>
       <h1 className='accent-text text-center'>Juan Rodriguez</h1>
       <h2 className='primary-text text-center'>Software Developer</h2>
@@ -13,6 +18,6 @@ export default function Hero() {
         onClick={() => scrollTo('#contact')}>
         CONTACT ME
       </button>
-    </section>
+    </motion.section>
   );
 }

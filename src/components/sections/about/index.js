@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Title from '../../common/titles';
 import './index.scss';
+import { motion } from 'framer-motion';
 
-export default function About() {
+export default function About({ variants }) {
   return (
-    <section id='about'>
+    <motion.section
+      initial='hidden'
+      whileInView='visible'
+      variants={variants}
+      viewport={{ once: true, amount: 0.3 }}
+      id='about'>
       <Title text='About me' />
       <p>
         Hello, my name is Juan, I am a graduate in electronic engineering and
@@ -29,6 +35,6 @@ export default function About() {
         <li>Nest Js</li>
         <li>Next Js</li>
       </ul>
-    </section>
+    </motion.section>
   );
 }

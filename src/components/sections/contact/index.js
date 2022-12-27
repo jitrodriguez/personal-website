@@ -3,10 +3,16 @@ import Button from '../../common/button';
 import Github from '../../common/icons/github';
 import Linkedin from '../../common/icons/linkedin';
 import './index.scss';
+import { motion } from 'framer-motion';
 
-export default function Contact() {
+export default function Contact({ variants }) {
   return (
-    <section id='contact'>
+    <motion.section
+      initial='hidden'
+      whileInView='visible'
+      variants={variants}
+      viewport={{ once: true, amount: 0.3 }}
+      id='contact'>
       <h2>Contact</h2>
       <div className='contact-buttons'>
         <Button
@@ -26,6 +32,6 @@ export default function Contact() {
         <Linkedin />
         {/* <Pluralsight /> */}
       </div>
-    </section>
+    </motion.section>
   );
 }

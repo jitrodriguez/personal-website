@@ -5,8 +5,9 @@ import Card from '../../common/jobsCard/card';
 import Title from '../../common/titles';
 import { useState } from 'react';
 import './index.scss';
+import { motion } from 'framer-motion';
 
-export default function Experience() {
+export default function Experience({ variants }) {
   const data = useStaticQuery(graphql`
     query JobsQuery {
       allJobsJson {
@@ -50,7 +51,12 @@ export default function Experience() {
     return buttons;
   };
   return (
-    <section id='experience'>
+    <motion.section
+      initial='hidden'
+      whileInView='visible'
+      variants={variants}
+      viewport={{ once: true, amount: 0.3 }}
+      id='experience'>
       <div>
         <Title text='Experience' />
       </div>
@@ -66,6 +72,6 @@ export default function Experience() {
           />
         )}
       </div>
-    </section>
+    </motion.section>
   );
 }

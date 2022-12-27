@@ -1,8 +1,9 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import ProjectCard from '../../common/projectCard';
+import { motion } from 'framer-motion';
 
-export default function Projects() {
+export default function Projects({ variants }) {
   const data = useStaticQuery(graphql`
     query ImportantProjects {
       allProjectImportantJson {
@@ -24,13 +25,18 @@ export default function Projects() {
     }
   `);
   return (
-    <section id='projects'>
+    <motion.section
+      initial='hidden'
+      whileInView='visible'
+      variants={variants}
+      viewport={{ once: true, amount: 0.3 }}
+      id='projects'>
       <h2>Projects</h2>
       <div className='projects'>
         {data.allProjectImportantJson.edges.map(({ node }) => (
           <ProjectCard key={node.id} info={node} />
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }

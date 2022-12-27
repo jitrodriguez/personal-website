@@ -5,24 +5,25 @@ import Close from '../icons/close';
 import './navbar.scss';
 import NavButton from './navButton';
 import scrollTo from 'gatsby-plugin-smoothscroll';
+import { motion } from 'framer-motion';
 
-export default function NavBar() {
+export default function NavBar({ variants }) {
   const [navOpen, setNavOpen] = React.useState(null);
   const items = [
     { to: '#about', text: 'About me' },
     { to: '#experience', text: 'Experience' },
     { to: '#projects', text: 'Projects' },
     { to: '#contact', text: 'Contact' },
-    { to: '', text: 'Resume' },
+    { href: `cv_Juan_Rodriguez.pdf`, text: 'Resume' },
   ];
   const navItems = items.map((item, index) => {
     return (
       <NavButton
         key={index}
-        to={item.to}
+        href={item.href}
         text={item.text}
         close={() => {
-          scrollTo(item.to);
+          if (item.to) scrollTo(item.to);
           setNavOpen(false);
         }}
       />
@@ -30,7 +31,11 @@ export default function NavBar() {
   });
 
   return (
-    <nav className='navbar'>
+    <motion.nav
+      initial='hidden'
+      animate='visible'
+      variants={variants}
+      className='navbar'>
       <Logo />
       <Hamburger hidden={navOpen} change={() => setNavOpen(true)} />
       <Close hidden={!navOpen} change={() => setNavOpen(false)} />
@@ -40,6 +45,6 @@ export default function NavBar() {
         }`}>
         {navItems}
       </div>
-    </nav>
+    </motion.nav>
   );
 }
