@@ -8,6 +8,7 @@ import Hero from '../components/sections/hero';
 import Loader from '../components/sections/loader/loader';
 import Projects from '../components/sections/projects';
 import './../styles/index.scss';
+import { Seo } from '../components/seo/seo';
 
 export default function Index() {
   // set is mounted and set to false
@@ -28,6 +29,7 @@ export default function Index() {
 
   return (
     <React.StrictMode>
+      <Seo />
       {!isMounted ? (
         <Loader />
       ) : (

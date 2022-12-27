@@ -4,7 +4,8 @@
 module.exports = {
   siteMetadata: {
     title: `Juan Rodriguez`,
-    siteUrl: `https://www.yourdomain.tld`,
+    description: `Software Developer - Juan Rodriguez Portfolio`,
+    siteUrl: `https://juanrodriguez.netlify.com`,
   },
   plugins: [
     'gatsby-plugin-image',
