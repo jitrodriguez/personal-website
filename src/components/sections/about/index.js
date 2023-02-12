@@ -26,6 +26,8 @@ export default function About({ variants }) {
       </p>
       <p>As of today I have worked on multiple technologies such as:</p>
       <ul className='skills'>
+        <li>UiPath</li>
+        <li>Microsoft Power Platform Suite</li>
         <li>Python</li>
         <li>JavaScript</li>
         <li>TypeScript</li>
