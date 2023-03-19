@@ -1,5 +1,12 @@
 [
   {
+    "Title": "Github finder",
+    "Link": "https://github-finder-app-five.vercel.app/",
+    "Repository": "https://github.com/andre2329/github-finder-app",
+    "Stack": "HTML, CSS, JS, Bootstrap, jQuery, Github API",
+    "Image": "../assets/github-finder.png"
+  },
+  {
     "Title": "Disdroinka landing page",
     "Link": "https://www.disdroinka.com/",
     "Repository": "",
@@ -12,12 +19,5 @@
     "Repository": "https://github.com/andre2329/proyecto-ecg",
     "Stack": "Python, Pandas, Numpy, Matplotlib, Scipy, Scikit-learn",
     "Image": "../assets/ecg.png"
-  },
-  {
-    "Title": "Github finder",
-    "Link": "https://github-finder-app-five.vercel.app/",
-    "Repository": "https://github.com/andre2329/github-finder-app",
-    "Stack": "HTML, CSS, JS, Bootstrap, jQuery, Github API",
-    "Image": "../assets/github-finder.png"
   }
 ]
