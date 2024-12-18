@@ -35,7 +35,7 @@ export default function Index() {
         <Loader />
       ) : (
         <>
-          <Bot />
+          {/* <Bot /> */}
           <NavBar variants={variants} />
           <Hero variants={variants} />
           <About variants={variants} />
