@@ -1,5 +1,19 @@
 [
   {
+    "Title": "Personal website",
+    "Link": "https://juanrodriguez.netlify.app/",
+    "Repository": "https://github.com/jitrodriguez/personal-website",
+    "Stack": "React, Gatsby, GraphQL",
+    "Image": "../assets/my-webpage.png"
+  },
+  {
+    "Title": "Pokedex",
+    "Link": "https://pokedex-launchxlatam.netlify.app/",
+    "Repository": "https://github.com/jitrodriguez/pokedex-html-tailwind",
+    "Stack": "HTML, CSS, JS, Tailwind CSS",
+    "Image": "../assets/pokedex.png"
+  },
+  {
     "Title": "Github finder",
     "Link": "https://github-finder-app-five.vercel.app/",
     "Repository": "https://github.com/andre2329/github-finder-app",

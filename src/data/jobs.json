@@ -1,8 +1,36 @@
 [
   {
+    "ButtonTitle": "BBVA Perú",
+    "MainTitle": "Mobile Developer - Release Manager",
+    "RangeDate": "May 2023 - Present",
+    "Items": [
+      "Review integration flow for new releases", "Evaluate new features and ensure compliance with best practices","Lead Glopilot initiative, architecting both VS Code and Chrome extensions to streamline development workflow through custom AI agents and GitHub Copilot integration, significantly improving team productivity",
+      "Authored development standards documentation for Lit Element, focusing on rendering optimization and BBVA Design System best practices",
+      "Reviewed PRs for new feature integration into GloMo BBVA application","Developed accessible components meeting global accessibility standards, including talkback and Voice Over compatibility"
+,"Created unit tests and E2E tests for web and mobile platforms"
+    ],
+    "Stack": [
+      "LitElement",
+      "Javascript",
+      "Typescript",
+      "HTMl",
+      "Scss",
+      "Polymer",
+      "Vscode Extension",
+      "Chrome Extension",
+      "Websockets",
+      "Fastify",
+      "Karma",
+      "Radish",
+      "Android",
+      "iOS",
+      "Bitbucket"
+    ]
+  },
+  {
     "ButtonTitle": "Banco Pichincha - Devsu",
-    "MainTitle": "Full Stack Chatbot Developer & RPA Developer",
-    "RangeDate": "March 2022 - Present",
+    "MainTitle": "Full Stack Developer",
+    "RangeDate": "March 2022 - May 2023",
     "Items": [
       "Development of process automation through robots focused on Uipath, Power Apps and Power Automate.",
       "Successful development of a cognitive assistant for process improvement of collaborators with Azure services (Bot service, Bot framework composer and LUIS) and integrating this service to microsoft teams.",

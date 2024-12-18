@@ -41,6 +41,7 @@ export default function Experience({ variants }) {
           key={id}
           id={idName}
           text={ButtonTitle}
+          selectedId={selectedId}
           changeFunction={(id) => {
             setCardOpen(true);
             setSelectedId(id);

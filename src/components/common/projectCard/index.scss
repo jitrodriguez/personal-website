@@ -2,6 +2,7 @@
 .project {
   position: relative;
   max-width: 24rem;
+  border: 1px solid colors.$secondary-color;
 }
 .projects {
   gap: 1rem;

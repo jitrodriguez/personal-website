@@ -17,10 +17,14 @@ h2 {
   font-weight: 300;
 }
 p,
-li {
+li,
+h4 {
   color: colors.$text-color;
   font-size: 1rem;
+}
+p{
   font-weight: 300;
+  line-height: 2rem;
 }
 section {
   padding: 2rem;
@@ -42,4 +46,19 @@ footer {
   color: white;
   padding: 1rem;
   text-align: center;
+}
+.tech-stack{
+  h3{
+    color: colors.$text-color;
+  }
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  li {
+    padding: 0.3rem 0.7rem;
+  }
 }
