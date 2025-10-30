@@ -12,6 +12,7 @@ export default function Contact({ variants }) {
       whileInView='visible'
       variants={variants}
       viewport={{ once: true, amount: 0.3 }}
+      className='contact'
       id='contact'>
       <h2>Contact</h2>
       <div className='contact-buttons'>

@@ -10,7 +10,6 @@ module.exports = {
   plugins: [
     'gatsby-plugin-image',
     'gatsby-plugin-sitemap',
-    'gatsby-plugin-sass',
     'gatsby-transformer-json',
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -32,6 +31,14 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: './src/assets/personal_logo.svg',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        sassOptions: {
+          includePaths: [`${__dirname}/src/styles`],
+        },
       },
     },
   ],

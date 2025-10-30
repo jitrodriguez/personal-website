@@ -1,0 +1,52 @@
+:root {
+  /* Dark (por defecto) */
+  --bg: #0E0705;
+  --bg-elevated: #1A0F0A;
+  --text: #FEFDD4;  
+  --text-muted: #C7BBA4;    
+  --accent: #C8A34B;
+  --accent-soft:#B48A46;
+
+  --outline:rgba(255, 224, 150, 0.2);
+  --network-line: rgba(200, 163, 75, 0.2);
+  --network-node: #C8A34B;
+  --button-bg: #C8A34B;
+  --button-text: #1E140D;
+  --button-border: #B48A46;
+}
+
+/* Dark */
+:root[data-theme='ligth'] {
+  --bg: #0E0705;
+  --bg-elevated: #1A0F0A;
+  --text: #FEFDD4;  
+  --text-muted: #C7BBA4;    
+  --accent: #C8A34B;
+  --accent-soft:#B48A46;
+
+  --outline:rgba(255, 224, 150, 0.2);
+  --network-line: rgba(200, 163, 75, 0.2);
+  --network-node: #C8A34B;
+  --button-bg: #C8A34B;
+  --button-text: #1E140D;
+  --button-border: #B48A46;
+}
+
+/* Respeta la preferencia del sistema si el usuario no eligió tema manualmente */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='dark']) {
+  --bg: #0E0705;
+  --bg-elevated: #1A0F0A;
+  --text: #FEFDD4;  
+  --text-muted: #C7BBA4;    
+  --accent: #C8A34B;
+  --accent-soft:#B48A46;
+
+  --outline:rgba(255, 224, 150, 0.2);
+  --network-line: rgba(200, 163, 75, 0.2);
+  --network-node: #C8A34B;
+  --button-bg: #C8A34B;
+  --button-text: #1E140D;
+  --button-border: #B48A46;
+  }
+}

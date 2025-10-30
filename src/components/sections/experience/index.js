@@ -57,10 +57,9 @@ export default function Experience({ variants }) {
       whileInView='visible'
       variants={variants}
       viewport={{ once: true, amount: 0.3 }}
+      className='experience'
       id='experience'>
-      <div>
-        <Title text='Experience' />
-      </div>
+      <Title text='Experience' />
       <div className='experience-items'>
         <div className='buttons'>{jobs && formatData(jobs)}</div>
         {selectedId && (

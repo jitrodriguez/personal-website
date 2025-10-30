@@ -1,5 +1,5 @@
 import React from 'react';
 
 export default function Title({ text }) {
-  return <h2>{text}</h2>;
+  return <h2 className='title'>{text}</h2>;
 }

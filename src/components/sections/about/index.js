@@ -31,44 +31,58 @@ export default function About({ variants }) {
       viewport={{ once: true, amount: 0.3 }}
       aria-labelledby='about-title'
       id='about'
+      className='about'
     >
       <Title
-        text='About me'
+        text='About Me'
         id='about-title'
       />
-      <div className='about-content'>
-      <p>
-        Hello, I'm Juan, a software developer and electronic engineering
-        graduate.
-      </p>
-      <p>
-        My programming journey began in 2018, creating small interfaces to solve
-        engineering tasks. As I explored web development, I discovered my true
-        passion:{' '}
-        <strong>developing software that makes a meaningful impact.</strong>
-      </p>
-      <p>
-        Currently, I balance my time between professional software development
-        at BBVA and teaching programming to technology enthusiasts.
-      </p>
-      <div className='tech-stack'>
-        <h3>My Technology Ecosystem</h3>
-        {TECH_STACK.map((category, index) => (
-          <div
-            key={index}
-            className='tech-category'
-          >
-            <h4>{category.category}</h4>
-            <ul className='skills'>
-              {category.items.map((tech, techIndex) => (
-                <li key={techIndex}>{tech}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
+      <div>
+        <p className="story__intro">
+          From Electronics Engineering to Senior Software Engineering — driven by a
+          passion for crafting elegant, high-performance user interfaces. I focus on
+          scalable architecture, motion, and accessibility.
+        </p>
+
+        <div className="story__metrics">
+          <div className="metric">4+ yrs · Frontend</div>
+          <div className="metric">95+ Lighthouse Perf</div>
+          <div className="metric">20+ PR Reviews/mo</div>
+        </div>
       </div>
+
+
+      <div className="stack">
+        <section aria-labelledby="s-lang">
+          <h3 id="s-lang" className="stack__title">Languages — Daily drivers</h3>
+          <ul className="chips">
+            <li><a className="chip" aria-label="JavaScript">JavaScript</a></li>
+            <li><a className="chip" aria-label="TypeScript">TypeScript</a></li>
+            <li><span className="chip">Python</span></li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="s-fw">
+          <h3 id="s-fw" className="stack__title">Frameworks & Libraries — Production</h3>
+          <ul className="chips" role="list">
+            <li><div className="chip" >React</div></li>
+            <li><div className="chip" >Next.js</div></li>
+            <li><div className="chip" >LitElement</div></li>
+            <li><span className="chip">NestJS</span></li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="s-tools">
+          <h3 id="s-tools" className="stack__title">Tools & Platforms — CI/CD & Cloud</h3>
+          <ul className="chips" role="list">
+            <li><span className="chip">Docker</span></li>
+            <li><span className="chip">CI/CD</span></li>
+            <li><span className="chip">Azure</span></li>
+            <li><span className="chip">GitHub Actions</span></li>
+          </ul>
+        </section>
       </div>
-      
+
     </motion.section>
   )
 }
