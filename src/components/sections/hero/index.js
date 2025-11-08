@@ -4,6 +4,8 @@ import './index.scss';
 import { motion } from 'framer-motion';
 import ScrollCue from './scrollClue';
 import HeroTagline from './heroTagline';
+import Github from '../../common/icons/github';
+import Linkedin from '../../common/icons/linkedin';
 export default function Hero({ variants }) {
   return (
     <motion.section
@@ -24,17 +26,17 @@ export default function Hero({ variants }) {
       <HeroTagline />
       <div className="hero__ctas">
         <a
-          href="#work"
+          href="#projects"
           className="button button--primary"
           onClick={(e) => {
             e.preventDefault();
-            scrollTo("#work");
+            scrollTo("#projects");
           }}
         >
           View My Work
         </a>
 
-        <a
+        {/* <a
           href="#contact"
           className="button button--ghost"
           onClick={(e) => {
@@ -43,7 +45,13 @@ export default function Hero({ variants }) {
           }}
         >
           Get In Touch
-        </a>
+        </a> */}
+      </div>
+
+      <div className='hero__socials'>
+        <Github />
+        <Linkedin />
+        {/* <Pluralsight /> */}
       </div>
 
       <ScrollCue target="#about" />

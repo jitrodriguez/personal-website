@@ -1,7 +1,8 @@
 [
   {
     "ButtonTitle": "BBVA Perú",
-    "MainTitle": "Mobile Developer - Release Manager",
+    "MainTitle": "Front-End Engineer / Release Manager",
+    "Company": "BBVA",
     "RangeDate": "May 2023 - Present",
     "Items": [
       "Review integration flow for new releases", "Evaluate new features and ensure compliance with best practices","Lead Glopilot initiative, architecting both VS Code and Chrome extensions to streamline development workflow through custom AI agents and GitHub Copilot integration, significantly improving team productivity",
@@ -25,10 +26,12 @@
       "Android",
       "iOS",
       "Bitbucket"
-    ]
+    ],
+    "Description": "Build & scale BBVA’s frontend platform (React, LitElement/Cells), set a11y/performance standards, integrate bank-grade APIs, and mentor teams. Led “Glopilot” to automate workflows, cutting repetitive work ~35%."
   },
   {
     "ButtonTitle": "Banco Pichincha - Devsu",
+    "Company": "Banco Pichincha (through Devsu)",
     "MainTitle": "Full Stack Developer",
     "RangeDate": "March 2022 - May 2023",
     "Items": [
@@ -36,6 +39,7 @@
       "Successful development of a cognitive assistant for process improvement of collaborators with Azure services (Bot service, Bot framework composer and LUIS) and integrating this service to microsoft teams.",
       "Development of NodeJs archetype with NestJs framework for internal use of the backend chapter of the client's company."
     ],
+    "Description": "Full Stack Developer at Banco Pichincha via Devsu, specializing in RPA with UiPath, Power Apps, and Power Automate. Developed cognitive assistants using Azure Bot Services and LUIS, enhancing team efficiency through Microsoft Teams integration. Created Node.js archetypes with NestJS for backend solutions.",
     "Stack": [
       "UiPath",
       "Power Automate",
@@ -50,29 +54,8 @@
     ]
   },
   {
-    "ButtonTitle": "Devsu",
-    "MainTitle": "Software Developer - Training",
-    "RangeDate": "January - February 2022",
-    "Items": [
-      "Training for software development with best practices.",
-      "Time estimation for the development of internal projects.",
-      "Support with the development of internal recruitment platform with NextJs framework."
-    ],
-    "Stack": ["NextJs", "ReactJs", "NodeJs", "MongoDB", "ExpressJs", "Git"]
-  },
-  {
-    "ButtonTitle": "Independent Teacher",
-    "MainTitle": "Python & Javascript Teacher",
-    "RangeDate": "January 2021 - Present",
-    "Items": [
-      "Teaching of programming from basic to advanced level in languages such as python and javascript.",
-      "Development and teaching of web scrapping applications for the stock market superintendence to obtain daily values of different companies for later analysis of investors."
-    ],
-    "Stack": ["Python", "Javascript", "NodeJs", "MongoDB", "ExpressJs", "Git"]
-  },
-
-  {
     "ButtonTitle": "Distribuidora Inka",
+    "Company": "Distribuidora Inka",
     "MainTitle": "IT-Support & Web Developer",
     "RangeDate": "December 2020 - December 2021",
     "Items": [
@@ -81,17 +64,20 @@
       "Development of a system for tracking vendors in real time (NextJs - React Native).",
       "Development of a landing page with NextJs and Firebase"
     ],
+    "Description": "IT-Support and Web Developer at Distribuidora Inka, managing Windows Server environments and implementing digital solutions. Developed a business card generator and email signature system, enhancing brand consistency. Created a real-time vendor tracking system using Next.js and React Native, and built a landing page with Next.js and Firebase to boost online presence.",
     "Stack": ["NextJs", "ReactJs", "NodeJs", "MongoDB", "ExpressJs", "Git"]
   },
   {
     "ButtonTitle": "VascoTechnologies",
     "MainTitle": "System Intern",
+    "Company": "VascoTechnologies",
     "RangeDate": "March - June 2021",
     "Items": [
       "Migration of e-commerce to wordpress and product quoting application, using automatic pdf generators and email alerts for analytics.",
       "Creation of custom plugins for payment methods (Yape, Plin and Tunki).",
       "Quick learning of the necessary tools to cover the solution (Wordpress and PHP)."
     ],
+    "Description": "System Intern at VascoTechnologies, where I led the migration of e-commerce platforms to WordPress, enhancing user experience and operational efficiency. Developed a product quoting application featuring automatic PDF generation and email alerts for improved analytics. Created custom payment method plugins for Yape, Plin, and Tunki, demonstrating adaptability and quick learning of WordPress and PHP technologies.",
     "Stack": ["Wordpress", "PHP", "MySQL"]
   }
 ]

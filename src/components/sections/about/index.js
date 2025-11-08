@@ -37,11 +37,11 @@ export default function About({ variants }) {
         text='About Me'
         id='about-title'
       />
-      <div>
+      <div className="story">
         <p className="story__intro">
-          From Electronics Engineering to Senior Software Engineering — driven by a
-          passion for crafting elegant, high-performance user interfaces. I focus on
-          scalable architecture, motion, and accessibility.
+          I’m a front-end engineer passionate about crafting accessible, pixel-perfect interfaces where thoughtful design meets robust engineering. I care about semantics, performance budgets, and usability to build inclusive experiences that feel effortless.
+          <br /><br />
+          Currently I’m a Senior Web UI Engineer & Release Manager at BBVA Perú, specializing in React, LitElement, design systems, and WCAG 2.1 AA. I lead front-end architecture, ship reusable components, and automate workflows—like Glopilot—to deliver secure, compliant, high-performance products in regulated environments.
         </p>
 
         <div className="story__metrics">

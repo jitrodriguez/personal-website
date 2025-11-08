@@ -10,11 +10,10 @@ section{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 90vh;
-  height: 90dvh;
+  height: 95vh;
+  height: 95dvh;
   gap: 1rem;
   position: relative;
-  padding-bottom: 4.5rem;
 }
 .hero__title {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
@@ -63,7 +62,7 @@ section{
   flex: 1 1 6.5rem;
 }
 
-.hero .button{
+.button{
   text-decoration: none;
   padding: 1rem;
   border-radius: 8px;
@@ -105,6 +104,14 @@ section{
 .scroll-cue__icon{
   opacity: .9;
   animation: cueBounce 1.6s ease-in-out infinite;
+}
+
+.hero__socials{
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  fill: colors.$text-color;
+  max-height: 50px;
 }
 
 /* motion-aware */

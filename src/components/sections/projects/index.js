@@ -2,6 +2,8 @@ import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import ProjectCard from '../../common/projectCard';
 import { motion } from 'framer-motion';
+import './index.scss';
+import Title from '../../common/titles';
 
 export default function Projects({ variants }) {
   const data = useStaticQuery(graphql`
@@ -13,6 +15,7 @@ export default function Projects({ variants }) {
             Repository
             Stack
             Title
+            Description
             id
             Image {
               childImageSharp {
@@ -29,10 +32,11 @@ export default function Projects({ variants }) {
       initial='hidden'
       whileInView='visible'
       variants={variants}
-      viewport={{ once: true, amount: 0.3 }}
-      id='projects'>
-      <h2>Projects</h2>
-      <div className='projects'>
+      viewport={{ once: true, amount: 0.08 }}
+      id='projects'
+      className='projects'>
+      <Title text='Projects' />
+      <div className='projects__cards'>
         {data.allProjectImportantJson.edges.map(({ node }) => (
           <ProjectCard key={node.id} info={node} />
         ))}

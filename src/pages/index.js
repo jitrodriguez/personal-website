@@ -19,7 +19,7 @@ export default function Index() {
     { to: '#about', text: 'About me' },
     { to: '#experience', text: 'Experience' },
     { to: '#projects', text: 'Projects' },
-    { to: '#contact', text: 'Contact' },
+    // { to: '#contact', text: 'Contact' },
     { href: `cv_Juan_Rodriguez.pdf`, text: 'Resume' },
   ];
 
@@ -56,7 +56,7 @@ export default function Index() {
           <About variants={variants} />
           <Experience variants={variants} />
           <Projects variants={variants} />
-          <Contact variants={variants} />
+          {/* <Contact variants={variants} /> */}
           <Footer variants={variants} />
         </>
       )}

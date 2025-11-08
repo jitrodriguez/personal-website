@@ -1,3 +1,22 @@
+@use 'colors' as colors;
 .contact{
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  padding: 2rem 1rem 2rem 1rem;
+  gap: 16px;
+}
+
+.contact__buttons{
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.contact__socials{
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  fill: colors.$text-color;
+  max-height: 50px;
 }

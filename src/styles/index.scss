@@ -2,6 +2,11 @@
 @use 'responsive';
 @use 'theme';
 
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
 .global-bg {
   position: fixed;
   inset: 0;
@@ -39,4 +44,21 @@ body {
 .title{
   color: colors.$text-color;
   font-size: clamp(2rem, 4vw, 3.5rem);
+  margin: 0;
+}
+
+footer{
+  padding: 24px;
+  text-align: center;
+  color: colors.$text-muted-color;
+  background-color: colors.$background-color-elevated;
+}
+
+html,body
+{
+    width: 100vw;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
 }

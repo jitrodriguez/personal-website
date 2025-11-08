@@ -6,27 +6,26 @@ import LinkExternal from '../icons/link-external';
 export default function ProjectCard({ info }) {
   return (
     <div className='project'>
-      <div className='project-descriptor'>
-        <h3>{info.Title}</h3>
-        <p>{info.Stack}</p>
-        {info.Repository && (
-          <a href={info.Repository}>
-            Repository
+      <a href={info.Link??info.Repository} className='project__title' target='__blank'>
+        <h3>{info.Title}</h3><LinkExternal />
+      </a>
+      <p className='project__description'>{info.Description}</p>
+      {info.Repository && (
+          <a className='project__repo' href={info.Repository} target='__blank'>
+            View Repo
             <LinkExternal />
           </a>
         )}
-        {info.Link && (
-          <a href={info.Link}>
-            Link
+        {!info.Repository && info.Link && (
+          <a className='project__repo' href={info.Link} target='__blank'>
+            View more
             <LinkExternal />
           </a>
         )}
-      </div>
       <GatsbyImage
-        style={{ zIndex: -1, width: '100%', height: '100%' }}
         image={getImage(info.Image)}
         alt={info.Title}
-        className='project-image'
+        className='project__image'
       />
     </div>
   );
