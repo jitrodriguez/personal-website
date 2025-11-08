@@ -1,37 +1,50 @@
 [
   {
+    "Title": "Vscode LangChain Bridge",
+    "Description": "A npm package called vscode-chat-langchain-bridge that allows developers to integrate LangChain capabilities into their VSCode extensions, enabling advanced AI-driven functionalities within the code editor environment.",
+    "Link": "https://www.npmjs.com/package/vscode-chat-langchain-bridge?activeTab=readme",
+    "Repository": "https://github.com/jitrodriguez/vscode-chat-langchain-bridge",
+    "Stack": "Typescript, VSCode API, LangChain, Node.js",
+    "Image": "./../assets/vscode_langchain_bridge.png"
+  },
+  {
     "Title": "Personal website",
     "Link": "https://juanrodriguez.netlify.app/",
     "Repository": "https://github.com/jitrodriguez/personal-website",
     "Stack": "React, Gatsby, GraphQL",
-    "Image": "../assets/my-webpage.png"
+    "Description": "My personal website showcasing my projects, experience, and skills as a developer. Built with React and Gatsby for optimal performance and SEO.",
+    "Image": "./../assets/personal_website.png"
   },
   {
     "Title": "Pokedex",
     "Link": "https://pokedex-launchxlatam.netlify.app/",
     "Repository": "https://github.com/jitrodriguez/pokedex-html-tailwind",
     "Stack": "HTML, CSS, JS, Tailwind CSS",
-    "Image": "../assets/pokedex.png"
+    "Description": "A simple Pokedex web application that allows users to search and view information about different Pokemon. Built with HTML, CSS, JavaScript, and styled using Tailwind CSS.",
+    "Image": "./../assets/pokedex.png"
   },
   {
     "Title": "Github finder",
     "Link": "https://github-finder-app-five.vercel.app/",
     "Repository": "https://github.com/andre2329/github-finder-app",
     "Stack": "HTML, CSS, JS, Bootstrap, jQuery, Github API",
-    "Image": "../assets/github-finder.png"
+    "Description": "A web application that allows users to search for Github profiles and view their details using the Github API. Built with HTML, CSS, JavaScript, Bootstrap, and jQuery.",
+    "Image": "./../assets/github-finder.png"
   },
   {
     "Title": "Disdroinka landing page",
     "Link": "https://www.disdroinka.com/",
+    "Description": "Landing page for Distribuidora Inka, a distribution company. Developed using NextJs and Firebase to provide a responsive and user-friendly experience.",
     "Repository": "",
     "Stack": "HTML, CSS, JS, Bootstrap, jQuery",
-    "Image": "../assets/inka.png"
+    "Image": "./../assets/inka.png"
   },
   {
     "Title": "Extraction of parameters from electrocardiographic signals",
     "Link": "",
+    "Description": "A Python project focused on the extraction and analysis of parameters from electrocardiographic (ECG) signals. Utilized libraries such as Pandas, Numpy, Matplotlib, Scipy, and Scikit-learn to process and analyze ECG data for medical research purposes.",
     "Repository": "https://github.com/andre2329/proyecto-ecg",
     "Stack": "Python, Pandas, Numpy, Matplotlib, Scipy, Scikit-learn",
-    "Image": "../assets/ecg.png"
+    "Image": "./../assets/ecg.png"
   }
 ]

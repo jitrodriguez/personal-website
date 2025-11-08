@@ -1,84 +1,80 @@
-@use '../../../styles/colors' as colors;
+@use 'colors' as colors;
 
 .navbar {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0;
   padding: 0;
   margin: 0;
-  background-color: colors.$tertiary-color;
-  z-index: 20;
+  backdrop-filter: blur(50px);
+  z-index: 10;
   height: 4.5rem;
-
-  box-shadow: 0px 5px 5px -5px #000;
+  width: 100vw;
+  width: 100dvw;
+  display: grid;
+  grid-template-areas: 
+  'logo toggle'
+  'items items';
+  grid-template-rows: 4.5rem auto;
+  overflow-y: hidden;
 }
-.nav-open {
-  -prefix-animation: slide-open 0.3s ease;
-  animation: slide-open 0.3s ease;
+
+.navbar-open {
+  height: 100vh;
+  height: 100dvh;
 }
 
-.nav-buttons {
+.navbar__items {
+  list-style: none;
+  width: 100%;
+  padding: 0;
+  margin:0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  position: absolute;
-  height: 40vh;
-  width: 100vw;
-  background-color: colors.$tertiary-color;
-  display: block;
-}
-.nav-buttons a {
-  color: colors.$accent-color;
-  text-decoration: none;
-  width: 100%;
-  display: flex;
+  top: 4.5em;
   justify-content: center;
   align-items: center;
-  height: 20%;
-  cursor: pointer;
+  grid-area: items;
 }
-.nav-buttons > a:not(:last-child) {
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.218);
+.navbar__items-open {
+  height: auto;
+  visibility: visible;
 }
-.hamburger,
-.close {
-  fill: colors.$primary-color;
-}
-.hamburger-button,
-.close-button {
-  width: 2rem;
-  height: 2rem;
-  padding: 0.5rem;
-  right: 0;
-  position: absolute;
-  top: 0.5rem;
-  cursor: pointer;
-}
-
-.hidden {
+.navbar__items-close {
+  height: 0;
   visibility: hidden;
-  display: none;
-}
-.nav-close {
-  height: 0px;
-  -prefix-animation: slide-close 0.3s ease;
-  animation: slide-close 0.3s ease;
   overflow: hidden;
 }
-@keyframes slide-open {
-  from {
-    height: 0;
-  }
-  to {
-    height: 40vh;
-  }
+
+.navbar__item{
+  width: 100%;
+
 }
-@keyframes slide-close {
-  from {
-    height: 40vh;
-  }
-  to {
-    height: 0px;
-  }
+
+.navbar__link{
+  display: flex;
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: colors.$text-color;
+  font-size: x-large;
+  padding: 1rem 0;
+}
+
+.navbar__toggle{
+  fill: colors.$text-color;
+  width: 4rem;
+  height: 4rem;
+  padding: 0.5rem;
+  background: none;
+  border: 0;
+  margin: 0;
+  font: inherit;
+  line-height: 1;
+  appearance: none;
+  -webkit-appearance: none;
+  grid-area: toggle;
+  align-self: center;
+  justify-self: flex-end;
 }

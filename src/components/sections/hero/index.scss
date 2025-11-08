@@ -1,37 +1,125 @@
 @use '../../../styles/fonts' as fonts;
+@use 'colors' as colors;
 
+section{
+  scroll-margin-top: 4.5rem;
+}
 .hero {
   display: flex;
   text-align: center;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  height: 95vh;
+  height: 95dvh;
   gap: 1rem;
-  p {
-    font-size: 1.5rem;
-    font-weight: 300;
-    margin: 0;
-    padding: 0;
-  }
-  h1 {
-    font-size: 4.5rem;
-    font-weight: 200;
-    margin: 0;
-    padding: 0;
-  }
-  h2 {
-    font-size: 3rem;
-    font-weight: 300;
-    margin: 0;
-    padding: 0;
-  }
-  button {
-    border-radius: 1rem;
-    width: 10rem;
-    height: 3rem;
-  }
+  position: relative;
 }
-section.hero {
+.hero__title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin: 0;
+  color: colors.$text-color;
   padding-top: 2rem;
+}
+
+.hero__separator {
+  display: block;
+  width: 64px;
+  height: 2px;
+  margin: 1rem auto 0;
+  background: colors.$accent-color-var;
+  border-radius: 4px;
+  opacity: 0.9;
+}
+
+.hero__subtitle {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+  margin: 0;
+  color: colors.$text-color;
+}
+
+.hero__tagline {
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  font-weight: 400;
+  margin: 0;
+  color: colors.$text-muted-color;
+  padding: 1rem;
+}
+
+.hero__ctas {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.hero__ctas > * {
+  flex: 1 1 6.5rem;
+}
+
+.button{
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.button--primary{
+  color: colors.$button-text-color;
+  background-color: colors.$button-bg-color;
+  display: inline-block;
+}
+
+.button--ghost{
+  color: colors.$text-color;
+  background-color: transparent;
+  border: 1px solid colors.$button-border-color;
+}
+
+
+.scroll-cue{
+  position: absolute;
+  pointer-events: none;
+  bottom: 1rem;
+}
+
+.scroll-cue__btn{
+  pointer-events: auto;
+  background: none; border: 0; padding: .5rem .75rem;
+  color: var(--text-muted); cursor: pointer;
+  display: grid; gap: .35rem; justify-items: center;
+  font: 600 0.75rem/1.2 "Sora",system-ui;
+  letter-spacing: .18em;
+}
+
+.scroll-cue__icon{
+  opacity: .9;
+  animation: cueBounce 1.6s ease-in-out infinite;
+}
+
+.hero__socials{
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  fill: colors.$text-color;
+  max-height: 50px;
+}
+
+/* motion-aware */
+@media (prefers-reduced-motion: reduce){
+  .scroll-cue__icon{ animation: none; }
+}
+
+@keyframes cueBounce{
+  0%,100% { transform: translateY(0); opacity:.9; }
+  50%     { transform: translateY(6px); opacity:.7; }
 }

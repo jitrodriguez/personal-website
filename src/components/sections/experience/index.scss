@@ -1,12 +1,13 @@
-.buttons {
+.experience{
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  align-items: center;
-  height: 80%;
-  gap: 0.5rem;
+  text-align: center;
+  padding: 2rem 1rem 2rem 1rem;
+  gap: 16px;
 }
 
-#experience {
-  height: 70vh;
+.experience__cards{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
 }

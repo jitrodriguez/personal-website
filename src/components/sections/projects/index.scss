@@ -1,0 +1,15 @@
+@use 'colors' as colors;
+
+.projects{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem 1rem 2rem 1rem;
+  gap: 16px;
+  color: colors.$text-color;
+}
+.projects__cards{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}

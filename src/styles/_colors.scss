@@ -1,5 +1,19 @@
 $primary-color: #f5241d;
-$secondary-color: #810034;
-$tertiary-color: #26001b;
+$secondary-color: #2A0009;
+$tertiary-color: #0E0705;
 $accent-color: #fff600;
-$text-color: #bebebe;
+
+
+
+$background-color: var(--bg);
+$background-color-elevated: var(--bg-elevated);
+$text-color: var(--text);
+$text-muted-color: var(--text-muted);
+$accent-color-var: var(--accent);
+$accent-soft-color: var(--accent-soft);
+$outline-color: var(--outline);
+$network-line-color: var(--network-line);
+$network-node-color: var(--network-node);
+$button-bg-color: var(--button-bg);
+$button-text-color: var(--button-text);
+$button-border-color: var(--button-border);

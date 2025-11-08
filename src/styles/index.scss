@@ -1,5 +1,34 @@
 @use 'colors';
 @use 'responsive';
+@use 'theme';
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+.global-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  /* base sólida más oscura */
+  background-color: #0B0403;
+
+  /* capas de gradiente con alfa (se notan) */
+  background-image:
+    /* brillo dorado sutil arriba-der */
+    radial-gradient(1200px 800px at 70% 20%, rgba(200,163,75,0.10), rgba(200,163,75,0) 60%),
+    /* viñeta vino más clara abajo-izq */
+    radial-gradient(1100px 900px at 25% 75%, rgba(43,18,18,0.55), rgba(11,4,3,0) 70%),
+    /* halo central vino */
+    radial-gradient(1400px 1000px at 50% 45%, rgba(26,15,10,0.85), rgba(11,4,3,0) 70%);
+  
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* mantiene el fondo estable al hacer scroll */
+  filter: saturate(105%) contrast(108%);
+}
 
 body {
   background-color: colors.$tertiary-color;
@@ -11,54 +40,25 @@ body {
   -webkit-overflow-scrolling: touch;
   position: relative;
 }
-h2 {
-  color: colors.$accent-color;
-  font-size: 1.5rem;
-  font-weight: 300;
-}
-p,
-li,
-h4 {
+
+.title{
   color: colors.$text-color;
-  font-size: 1rem;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin: 0;
 }
-p{
-  font-weight: 300;
-  line-height: 2rem;
-}
-section {
-  padding: 2rem;
-  padding-top: 4rem;
-  position: relative;
-}
-img {
-  z-index: -1;
-}
-h3 {
-  color: colors.$primary-color;
-}
-.github,
-.linkedin {
-  fill: white;
-}
-footer {
-  background-color: colors.$secondary-color;
-  color: white;
-  padding: 1rem;
+
+footer{
+  padding: 24px;
   text-align: center;
-}
-.tech-stack{
-  h3{
-    color: colors.$text-color;
-  }
+  color: colors.$text-muted-color;
+  background-color: colors.$background-color-elevated;
 }
 
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-
-  li {
-    padding: 0.3rem 0.7rem;
-  }
+html,body
+{
+    width: 100vw;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
 }

@@ -12,17 +12,24 @@ import { Seo } from '../components/seo/seo';
 
 export default function Index() {
   // set is mounted and set to false
-  const [isMounted, setIsMounted] = useState(false);
+  const [isMounted, setIsMounted] = useState(true);
 
   // use effect to set is mounted to true
+  const items = [
+    { to: '#about', text: 'About me' },
+    { to: '#experience', text: 'Experience' },
+    { to: '#projects', text: 'Projects' },
+    // { to: '#contact', text: 'Contact' },
+    { href: `cv_Juan_Rodriguez.pdf`, text: 'Resume' },
+  ];
 
   const variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 1 } },
   };
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 1000);
-    return () => clearTimeout(timeout);
+    // const timeout = setTimeout(() => setIsMounted(true), 1000);
+    // return () => clearTimeout(timeout);
   }, []);
 
   // if is mounted is true, return the following
@@ -35,12 +42,21 @@ export default function Index() {
       ) : (
         <>
           {/* <Bot /> */}
-          <NavBar variants={variants} />
+          <div className="global-bg" aria-hidden="true"></div>
+          <NavBar variants={variants}>
+            <NavBar.Toggle type="open" label="Open navigation" />
+            <NavBar.Toggle type="close" label="Close navigation" />
+            <NavBar.Links>
+              {items.map(item => (
+                <NavBar.Link key={item.text} {...item} />
+              ))}
+            </NavBar.Links>
+          </NavBar>
           <Hero variants={variants} />
           <About variants={variants} />
           <Experience variants={variants} />
           <Projects variants={variants} />
-          <Contact variants={variants} />
+          {/* <Contact variants={variants} /> */}
           <Footer variants={variants} />
         </>
       )}
