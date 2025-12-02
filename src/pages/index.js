@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import NavBar from '../components/common/navBar';
 import About from '../components/sections/about';
-import Contact from '../components/sections/contact';
 import Experience from '../components/sections/experience';
 import Footer from '../components/sections/footer';
 import Hero from '../components/sections/hero';
@@ -12,7 +11,7 @@ import { Seo } from '../components/seo/seo';
 
 export default function Index() {
   // set is mounted and set to false
-  const [isMounted, setIsMounted] = useState(true);
+  const [isMounted] = useState(true);
 
   // use effect to set is mounted to true
   const items = [
@@ -24,7 +23,7 @@ export default function Index() {
   ];
 
   const variants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 0.001 },
     visible: { opacity: 1, transition: { duration: 1 } },
   };
   useEffect(() => {

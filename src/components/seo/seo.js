@@ -1,5 +1,7 @@
 import React from 'react';
 import { useSiteMetadata } from '../../hooks/use-site-metadata';
+import { Helmet } from "react-helmet";
+
 
 export const Seo = ({ title, description, pathname, children }) => {
   const {
@@ -20,21 +22,25 @@ export const Seo = ({ title, description, pathname, children }) => {
 
   return (
     <>
-      <title>{seo.title}</title>
-      <meta name='description' content={seo.description} />
-      <meta name='image' content={seo.image} />
-      <meta name="google-site-verification" content="zTRPPOy8gWUBD9Cg09k6Khx2VxC_uF9_AfaNjgkc-7E" />
-      <meta name='twitter:card' content='summary_large_image' />
-      <meta name='twitter:title' content={seo.title} />
-      <meta name='twitter:url' content={seo.url} />
-      <meta name='twitter:description' content={seo.description} />
-      <meta name='twitter:image' content={seo.image} />
-      <meta name='twitter:creator' content={seo.twitterUsername} />
-      <link
-        rel='icon'
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👤</text></svg>"
-      />
-      {children}
+      <Helmet htmlAttributes={{
+        lang: 'en',
+      }}>
+        <title>{seo.title}</title>
+        <meta name='description' content={seo.description} />
+        <meta name='image' content={seo.image} />
+        <meta name="google-site-verification" content="zTRPPOy8gWUBD9Cg09k6Khx2VxC_uF9_AfaNjgkc-7E" />
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:title' content={seo.title} />
+        <meta name='twitter:url' content={seo.url} />
+        <meta name='twitter:description' content={seo.description} />
+        <meta name='twitter:image' content={seo.image} />
+        <meta name='twitter:creator' content={seo.twitterUsername} />
+        <link
+          rel='icon'
+          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👤</text></svg>"
+        />
+        {children}
+      </Helmet>
     </>
   );
 };

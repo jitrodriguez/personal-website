@@ -14,7 +14,7 @@ export default function ScrollCue({ target = "#about" }) {
   return (
     <motion.div
       className="scroll-cue"
-      initial={{ opacity: 0, y: 6 }}
+      initial={{ opacity: 0.001, y: 6 }}
       animate={{ opacity: 0.9, y: 0 }}
       transition={{ duration: reduce ? 0.2 : 0.6, delay: 0.6 }}
     >

@@ -4,7 +4,7 @@
 module.exports = {
   siteMetadata: {
     title: `Juan Rodriguez`,
-    description: `Software Developer - Juan Rodriguez Portfolio`,
+    description: `Juan Rodriguez is a front-end engineer passionate about crafting accessible, pixel-perfect interfaces where thoughtful design meets robust engineering.`,
     siteUrl: `https://juanrodriguez.netlify.com`,
   },
   plugins: [

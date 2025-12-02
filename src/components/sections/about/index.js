@@ -4,24 +4,6 @@ import './index.scss'
 import { motion } from 'framer-motion'
 
 export default function About({ variants }) {
-  const TECH_STACK = [
-    {
-      category: 'Languages',
-      items: ['JavaScript (ES6)', 'TypeScript', 'Python'],
-    },
-    {
-      category: 'Frameworks',
-      items: ['Node Js', 'Nest Js', 'Next Js', 'React', 'Flask'],
-    },
-    {
-      category: 'Cloud & Tools',
-      items: [
-        'Bot Services - Azure',
-        'UiPath',
-        'Microsoft Power Platform Suite',
-      ],
-    },
-  ]
 
   return (
     <motion.section
@@ -56,8 +38,8 @@ export default function About({ variants }) {
         <section aria-labelledby="s-lang">
           <h3 id="s-lang" className="stack__title">Languages — Daily drivers</h3>
           <ul className="chips">
-            <li><a className="chip" aria-label="JavaScript">JavaScript</a></li>
-            <li><a className="chip" aria-label="TypeScript">TypeScript</a></li>
+            <li><p className="chip" aria-label="JavaScript">JavaScript</p></li>
+            <li><p className="chip" aria-label="TypeScript">TypeScript</p></li>
             <li><span className="chip">Python</span></li>
           </ul>
         </section>

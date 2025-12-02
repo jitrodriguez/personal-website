@@ -1,10 +1,9 @@
 import React from 'react';
 import './index.scss';
-import Close from '../../icons/close';
 
 export default function Card({ info}) {
-  const { MainTitle, Items, RangeDate, Stack,Description, Company } = info;
-  console.log("Card info:",info);
+  const { MainTitle, RangeDate,Description, Company } = info;
+
   return (
     <div className='card'>
         <h3 className='card__title'>{MainTitle}</h3>
