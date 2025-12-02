@@ -35,5 +35,8 @@
   "resolutions": {
     "gatsby-plugin-sass/*/loader-utils": ">=1.4.2",
     "gatsby/*/engine.io": ">=6.2.1"
+  },
+  "devDependencies": {
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.32"
   }
 }

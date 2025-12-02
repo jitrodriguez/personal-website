@@ -14,6 +14,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-smoothscroll`,
+    `gatsby-plugin-webpack-bundle-analyser-v2`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {

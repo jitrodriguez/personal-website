@@ -51,12 +51,14 @@ export default function Index() {
               ))}
             </NavBar.Links>
           </NavBar>
-          <Hero variants={variants} />
-          <About variants={variants} />
-          <Experience variants={variants} />
-          <Projects variants={variants} />
-          {/* <Contact variants={variants} /> */}
-          <Footer variants={variants} />
+          <main >
+            <Hero variants={variants} />
+            <About variants={variants} />
+            <Experience variants={variants} />
+            <Projects variants={variants} />
+            {/* <Contact variants={variants} /> */}
+            <Footer variants={variants} />
+          </main>
         </>
       )}
     </React.StrictMode>
