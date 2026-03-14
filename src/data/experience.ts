@@ -30,7 +30,7 @@ export const experience: ExperienceItem[] = [
         company: 'Devsu - Banco Pichincha',
         role: 'Full Stack Developer',
         date: 'Jan 2022 → May 2023',
-        desc: 'RPA with UiPath, Power Apps & Power Automate. Cognitive assistants with Azure Bot Services & LUIS. Node.js archetypes with NestJS.',
+        desc: 'Developed internal banking tools with React, Node.js, NestJS, and Flask, while also delivering RPA and workflow automation solutions with UiPath, Power Apps, and Power Automate.',
         hasLine: true,
     },
     {
