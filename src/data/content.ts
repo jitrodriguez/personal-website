@@ -113,7 +113,7 @@ export const bootLines = [
     { t: '<span class="ok">[  OK  ]</span> Mounting frontend platform', d: 840 },
     { t: '<span class="ok">[  OK  ]</span> React · TypeScript · LitElement: ready', d: 1060 },
     { t: '<span class="ok">[  OK  ]</span> WCAG 2.1 AA compliance: active', d: 1240 },
-    { t: '<span class="warn">[ WARN ]</span> Coffee levels low — proceeding anyway', d: 1400 },
+    { t: '<span class="warn">[ WARN ]</span> Pizza levels low — proceeding anyway', d: 1400 },
     { t: '<span class="ok">[  OK  ]</span> Desktop ready.', d: 1600 },
 ]
 
