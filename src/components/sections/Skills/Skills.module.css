@@ -1,0 +1,56 @@
+.content {
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.groupTitle {
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: var(--os-text-dim);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+}
+
+.bars {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.barItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.barName {
+    font-size: 0.7rem;
+    font-weight: 600;
+    width: 80px;
+    flex-shrink: 0;
+}
+
+.barTrack {
+    flex: 1;
+    height: 5px;
+    background: var(--os-border);
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.barFill {
+    height: 100%;
+    border-radius: 99px;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.barPct {
+    font-size: 0.62rem;
+    color: var(--os-text-dim);
+    font-family: var(--font-mono);
+    width: 32px;
+    text-align: right;
+}

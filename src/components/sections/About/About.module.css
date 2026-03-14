@@ -1,0 +1,122 @@
+.content {
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.top {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--os-accent), var(--os-accent4));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.name {
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.role {
+    font-size: 0.75rem;
+    color: var(--os-accent);
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 2px;
+}
+
+.loc {
+    font-size: 0.72rem;
+    color: var(--os-text-dim);
+    margin-top: 4px;
+}
+
+.bio {
+    font-size: 0.8rem;
+    line-height: 1.7;
+    color: var(--os-text-dim);
+    border-left: 2px solid var(--os-accent);
+    padding-left: 14px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.statBox {
+    background: var(--os-panel2);
+    border: 1px solid var(--os-border);
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+}
+
+.statVal {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--os-accent);
+}
+
+.statLbl {
+    font-size: 0.62rem;
+    color: var(--os-text-dim);
+    margin-top: 2px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.sectionTitle {
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: var(--os-text-dim);
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.skillTag {
+    padding: 4px 10px;
+    border-radius: 99px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    background: var(--os-panel2);
+    border: 1px solid var(--os-border);
+    color: var(--os-text-dim);
+}
+
+.skillTag.blue {
+    border-color: #1f6feb;
+    color: var(--os-accent);
+    background: #1f6feb18;
+}
+
+.skillTag.green {
+    border-color: #238636;
+    color: var(--os-accent2);
+    background: #23863618;
+}
+
+.skillTag.purple {
+    border-color: #8b5cf6;
+    color: var(--os-accent4);
+    background: #8b5cf618;
+}

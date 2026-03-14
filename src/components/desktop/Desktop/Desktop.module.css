@@ -1,0 +1,54 @@
+.desktop {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background:
+        radial-gradient(ellipse 80% 60% at 70% 40%, #1a2744 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 20% 80%, #1a1030 0%, transparent 50%),
+        #0d1117;
+    overflow: hidden;
+}
+
+.desktop::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, #ffffff08 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+}
+
+.banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    pointer-events: none;
+    animation: fadeInUp 1s ease 1s both;
+}
+
+.bannerBig {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -2px;
+    background: linear-gradient(135deg, #fff 30%, var(--os-accent) 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.bannerSub {
+    font-size: 0.85rem;
+    color: var(--os-text-dim);
+    margin-top: 8px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.bannerHint {
+    font-size: 0.72rem;
+    color: #ffffff30;
+    margin-top: 16px;
+    font-family: var(--font-mono);
+}

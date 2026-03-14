@@ -1,0 +1,105 @@
+.boot {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 24px;
+}
+
+.logo {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: clamp(2.2rem, 8vw, 5rem);
+    letter-spacing: -2px;
+    color: #fff;
+}
+
+.version {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--os-text-dim);
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.log {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--os-text-dim);
+    width: min(500px, 90vw);
+    min-height: 120px;
+    line-height: 1.9;
+}
+
+/* ok/warn are injected via innerHTML so we use :global */
+:global(.ok) {
+    color: var(--os-accent2);
+}
+
+:global(.warn) {
+    color: #e3b341;
+}
+
+.line {
+    line-height: 1.9;
+}
+
+.barWrap {
+    width: min(400px, 80vw);
+    height: 3px;
+    background: #1a1a1a;
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--os-accent), var(--os-accent4));
+    border-radius: 99px;
+    transition: width 0.3s ease;
+}
+
+.os {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    white-space: nowrap;
+    animation: os 1.5s ease 1.5s both;
+    color: var(--os-accent);
+}
+
+.logo {
+    animation: logo 1s ease 1s both;
+}
+
+@keyframes logo {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+}
+
+@keyframes os {
+    0% {
+        opacity: 0;
+        max-width: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+        max-width: 3em;
+    }
+}

@@ -1,0 +1,83 @@
+.content {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card {
+    background: var(--os-panel2);
+    border: 1px solid var(--os-border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+}
+
+.card:hover {
+    border-color: var(--os-accent);
+    background: #1f2937;
+}
+
+.name {
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.desc {
+    font-size: 0.7rem;
+    color: var(--os-text-dim);
+    margin-top: 4px;
+    line-height: 1.5;
+}
+
+.tags {
+    display: flex;
+    gap: 5px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 99px;
+}
+
+.tagJs {
+    background: #f7df1e22;
+    color: #f7df1e;
+    border: 1px solid #f7df1e44;
+}
+
+.tagTs {
+    background: #3178c622;
+    color: #3178c6;
+    border: 1px solid #3178c644;
+}
+
+.tagReact {
+    background: #61dafb22;
+    color: #61dafb;
+    border: 1px solid #61dafb44;
+}
+
+.tagNode {
+    background: #3fb95022;
+    color: #3fb950;
+    border: 1px solid #3fb95044;
+}
+
+.tagPy {
+    background: #d2a8ff22;
+    color: #d2a8ff;
+    border: 1px solid #d2a8ff44;
+}
+
+.link {
+    font-size: 0.65rem;
+    color: var(--os-accent);
+    margin-top: 6px;
+    display: inline-block;
+}

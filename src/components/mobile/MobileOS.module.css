@@ -1,0 +1,290 @@
+.os {
+    width: 100vw;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    background:
+        radial-gradient(ellipse 120% 60% at 60% 20%, #1a2744 0%, transparent 60%),
+        radial-gradient(ellipse 80% 50% at 10% 90%, #1a1030 0%, transparent 50%),
+        #0d1117;
+    overflow: hidden;
+    position: relative;
+}
+
+.os::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, #ffffff06 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+}
+
+.statusbar {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    justify-content: space-between;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10;
+}
+
+.time {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.statusIcons {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    font-size: 0.65rem;
+    color: var(--os-text-dim);
+}
+
+.home {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero {
+    padding: 16px 22px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.heroName {
+    font-size: clamp(1.8rem, 8vw, 2.8rem);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    background: linear-gradient(135deg, #fff 30%, var(--os-accent) 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.05;
+}
+
+.heroRole {
+    font-size: 0.68rem;
+    color: var(--os-accent);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-top: 6px;
+}
+
+.heroLoc {
+    font-size: 0.68rem;
+    color: var(--os-text-dim);
+    margin-top: 2px;
+}
+
+.widget {
+    margin: 0 18px 12px;
+    background: #ffffff0a;
+    border: 1px solid var(--os-border);
+    border-radius: 16px;
+    padding: 12px 16px;
+    flex-shrink: 0;
+    backdrop-filter: blur(10px);
+}
+
+.widgetTitle {
+    font-size: 0.58rem;
+    font-weight: 700;
+    color: var(--os-text-dim);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.widgetStats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.wstatVal {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--os-accent);
+}
+
+.wstatLbl {
+    font-size: 0.56rem;
+    color: var(--os-text-dim);
+    font-weight: 600;
+}
+
+.appGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 8px 18px;
+    flex-shrink: 0;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.appIcon {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    box-shadow: 0 6px 20px #00000060;
+    transition: transform 0.1s;
+}
+
+.app:active .appIcon {
+    transform: scale(0.88);
+}
+
+.appLabel {
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: #ffffffcc;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.dock {
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 0 24px;
+    flex-shrink: 0;
+    background: #ffffff08;
+    border-top: 1px solid var(--os-border);
+    backdrop-filter: blur(20px);
+}
+
+.dockIcon {
+    width: 50px;
+    height: 50px;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    box-shadow: 0 4px 16px #00000050;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.dockIcon:active {
+    transform: scale(0.88);
+}
+
+/* App / Dock icon colors */
+.blue {
+    background: linear-gradient(135deg, #1a6fd4, #0d4fa0);
+}
+
+.green {
+    background: linear-gradient(135deg, #1e7a3c, #0f4a24);
+}
+
+.red {
+    background: linear-gradient(135deg, #c0392b, #7d1c14);
+}
+
+.purple {
+    background: linear-gradient(135deg, #7b2fbe, #4a1880);
+}
+
+.dark {
+    background: linear-gradient(135deg, #2d333b, #1c2128);
+}
+
+.orange {
+    background: linear-gradient(135deg, #d68910, #8a5602);
+}
+
+.swipeHint {
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.6rem;
+    color: #ffffff25;
+    font-family: var(--font-mono);
+    white-space: nowrap;
+    pointer-events: none;
+    animation: fadeInUp 1s ease 2s both;
+}
+
+/* Full-screen screens */
+.screen {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: radial-gradient(ellipse 100% 50% at 50% 0%, #1a2744 0%, transparent 50%), #0d1117;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(100%);
+    transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.screen.open {
+    transform: translateY(0);
+}
+
+.screenHeader {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 12px;
+    flex-shrink: 0;
+    border-bottom: 1px solid var(--os-border);
+    background: var(--os-panel);
+}
+
+.back {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--os-panel2);
+    border: 1px solid var(--os-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.screenTitle {
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+.screenBody {
+    flex: 1;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+.screenBody::-webkit-scrollbar {
+    display: none;
+}

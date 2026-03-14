@@ -1,0 +1,71 @@
+.icons {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+.icon {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 10px;
+    width: 80px;
+    transition: background 0.15s;
+}
+
+.icon:hover {
+    background: #ffffff12;
+}
+
+.iconImg {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    box-shadow: 0 4px 16px #00000060;
+}
+
+.iconLabel {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: #ffffffcc;
+    text-align: center;
+    text-shadow: 0 1px 4px #000;
+    line-height: 1.2;
+}
+
+/* Icon colors */
+.blue {
+    background: linear-gradient(135deg, #1a6fd4, #0d4fa0);
+}
+
+.green {
+    background: linear-gradient(135deg, #1e7a3c, #0f4a24);
+}
+
+.red {
+    background: linear-gradient(135deg, #c0392b, #7d1c14);
+}
+
+.purple {
+    background: linear-gradient(135deg, #7b2fbe, #4a1880);
+}
+
+.dark {
+    background: linear-gradient(135deg, #2d333b, #1c2128);
+}
+
+.orange {
+    background: linear-gradient(135deg, #d68910, #8a5602);
+}

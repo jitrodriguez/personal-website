@@ -1,0 +1,102 @@
+.window {
+    position: absolute;
+    min-width: 320px;
+    min-height: 200px;
+    background: var(--os-panel);
+    border: 1px solid var(--os-border);
+    border-radius: 10px;
+    box-shadow: 0 24px 80px #00000088, 0 0 0 1px #ffffff08;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+    will-change: transform;
+}
+
+.window.active {
+    box-shadow: 0 32px 100px #000000aa, 0 0 0 1px #58a6ff30;
+}
+
+.header {
+    height: 40px;
+    min-height: 40px;
+    background: var(--os-window-header);
+    border-bottom: 1px solid var(--os-border);
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 8px;
+    cursor: move;
+    flex-shrink: 0;
+}
+
+.btn {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: filter 0.15s;
+    border: none;
+}
+
+.btn:hover {
+    filter: brightness(1.3);
+}
+
+.close {
+    background: #ff5f57;
+}
+
+.min {
+    background: #febc2e;
+}
+
+.max {
+    background: #28c840;
+}
+
+.title {
+    flex: 1;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--os-text-dim);
+    letter-spacing: 0.5px;
+    pointer-events: none;
+}
+
+.body {
+    flex: 1;
+    overflow: auto;
+    min-height: 0;
+    /* critical: lets flex children shrink past content size */
+}
+
+.body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.body::-webkit-scrollbar-thumb {
+    background: var(--os-border);
+    border-radius: 3px;
+}
+
+/* Terminal: no padding, full flex column so the inner Terminal component fills 100% */
+.terminalBody {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.resizeHandle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 14px;
+    height: 14px;
+    cursor: se-resize;
+    background: linear-gradient(135deg, transparent 50%, var(--os-border) 50%);
+    border-radius: 0 0 10px 0;
+}

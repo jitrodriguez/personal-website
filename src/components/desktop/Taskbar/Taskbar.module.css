@@ -1,0 +1,87 @@
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+    background: var(--os-taskbar);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid var(--os-border);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 8px;
+    z-index: 1000;
+}
+
+.start {
+    all: unset;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: var(--os-accent);
+    flex-shrink: 0;
+}
+
+.start:hover {
+    background: var(--os-hover);
+}
+
+.divider {
+    width: 1px;
+    height: 24px;
+    background: var(--os-border);
+    margin: 0 4px;
+    flex-shrink: 0;
+}
+
+.tasks {
+    display: flex;
+    gap: 4px;
+    flex: 1;
+    overflow: hidden;
+}
+
+.task {
+    all: unset;
+    padding: 4px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--os-text-dim);
+    transition: all 0.15s;
+    border: 1px solid transparent;
+    max-width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.task:hover {
+    background: var(--os-hover);
+    color: var(--os-text);
+}
+
+.task.active {
+    background: var(--os-hover);
+    color: var(--os-accent);
+    border-color: var(--os-border);
+}
+
+.clock {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--os-text-dim);
+    margin-left: auto;
+    padding: 0 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}

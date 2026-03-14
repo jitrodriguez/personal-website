@@ -1,0 +1,72 @@
+.body {
+    background: #0d1117;
+    padding: 14px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    flex: 1;
+    /* fill the window body flex column */
+    min-height: 0;
+    /* allow shrinking past content */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.output {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.output::-webkit-scrollbar {
+    width: 4px;
+}
+
+.output::-webkit-scrollbar-thumb {
+    background: var(--os-border);
+}
+
+.line {
+    line-height: 1.7;
+    color: var(--os-text-dim);
+}
+
+.line.cmd {
+    color: var(--os-accent2);
+}
+
+.line.err {
+    color: var(--os-accent3);
+}
+
+.line.info {
+    color: var(--os-accent);
+}
+
+.line b {
+    color: var(--os-accent4);
+    font-weight: normal;
+}
+
+.inputLine {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.prompt {
+    color: var(--os-accent2);
+    flex-shrink: 0;
+    font-size: 0.72rem;
+}
+
+.input {
+    background: none;
+    border: none;
+    outline: none;
+    flex: 1;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--os-text);
+    caret-color: var(--os-accent);
+}

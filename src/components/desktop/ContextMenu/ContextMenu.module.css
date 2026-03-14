@@ -1,0 +1,35 @@
+.menu {
+    position: fixed;
+    z-index: 5000;
+    background: var(--os-panel);
+    border: 1px solid var(--os-border);
+    border-radius: 8px;
+    box-shadow: 0 8px 32px #00000066;
+    padding: 4px;
+    min-width: 180px;
+    display: none;
+}
+
+.item {
+    padding: 7px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--os-text-dim);
+    transition: background 0.1s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item:hover {
+    background: var(--os-hover);
+    color: var(--os-text);
+}
+
+.sep {
+    height: 1px;
+    background: var(--os-border);
+    margin: 4px 0;
+}

@@ -1,0 +1,32 @@
+.notif {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 6000;
+    background: var(--os-panel);
+    border: 1px solid var(--os-border);
+    border-radius: 10px;
+    padding: 12px 16px;
+    box-shadow: 0 8px 32px #000000aa;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 300px;
+    animation: notifIn 0.3s ease, notifOut 0.3s ease 2.7s forwards;
+    font-size: 0.78rem;
+}
+
+.icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 0.75rem;
+}
+
+.msg {
+    color: var(--os-text-dim);
+    margin-top: 2px;
+}
