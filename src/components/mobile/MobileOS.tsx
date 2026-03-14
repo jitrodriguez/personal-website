@@ -9,6 +9,7 @@ import { Skills } from '../sections/Skills/Skills'
 import { Terminal } from '../sections/Terminal/Terminal'
 import { Contact } from '../sections/Contact/Contact'
 import styles from './MobileOS.module.css'
+import { about } from '../../data/about'
 
 import { type ReactElement } from 'react'
 
@@ -56,17 +57,20 @@ export function MobileOS() {
             {/* Home */}
             <div className={styles.home}>
                 <div className={styles.hero}>
-                    <div className={styles.heroName}>Juan<br />Rodriguez</div>
-                    <div className={styles.heroRole}>SENIOR FRONTEND ENGINEER</div>
-                    <div className={styles.heroLoc}>📍 Lima, Perú · Globant - Deloitte USA</div>
+                    <div className={styles.heroName}>{about.name.split(' ')[0]}<br />{about.name.split(' ')[1]}</div>
+                    <div className={styles.heroRole}>{about.role}</div>
+                    <div className={styles.heroLoc}>📍 {about.location}</div>
                 </div>
 
                 <div className={styles.widget}>
                     <div className={styles.widgetTitle}>Quick Stats</div>
                     <div className={styles.widgetStats}>
-                        <div><div className={styles.wstatVal}>4+</div><div className={styles.wstatLbl}>Years Exp.</div></div>
-                        <div><div className={styles.wstatVal}>95+</div><div className={styles.wstatLbl}>Lighthouse</div></div>
-                        <div><div className={styles.wstatVal}>20+</div><div className={styles.wstatLbl}>PRs / mo</div></div>
+                        {about.stats.map((stat) => (
+                            <div key={stat.label}>
+                                <div className={styles.wstatVal}>{stat.value}</div>
+                                <div className={styles.wstatLbl}>{stat.label}</div>
+                            </div>
+                        ))}
                     </div>
                 </div>
 
