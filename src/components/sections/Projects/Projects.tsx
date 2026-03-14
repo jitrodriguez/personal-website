@@ -1,4 +1,4 @@
-import { projects } from '../../../data/content'
+import { projects } from '../../../data/projects'
 import styles from './Projects.module.css'
 
 const tagClass: Record<string, string> = {

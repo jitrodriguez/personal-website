@@ -4,6 +4,7 @@ export const contact = [
         label: 'EMAIL',
         value: 'jitrodriguez@hotmail.com',
         href: 'mailto:jitrodriguez@hotmail.com',
+        umamiEvent: 'email',
         bg: '#1f6feb22',
     },
     {
@@ -11,6 +12,7 @@ export const contact = [
         label: 'LINKEDIN',
         value: 'linkedin.com/in/juan-rodriguez-it',
         href: 'https://www.linkedin.com/in/juan-rodriguez-it/',
+        umamiEvent: 'linkedin',
         bg: '#1f6feb22',
     },
     {
@@ -18,6 +20,7 @@ export const contact = [
         label: 'GITHUB',
         value: 'github.com/jitrodriguez',
         href: 'https://github.com/jitrodriguez',
+        umamiEvent: 'github',
         bg: '#30363d',
     },
     {
@@ -25,6 +28,7 @@ export const contact = [
         label: 'RESUME',
         value: 'Download CV (PDF)',
         href: '/cv_Juan_Rodriguez.pdf',
+        umamiEvent: 'resume',
         bg: '#3fb95022',
     },
     {

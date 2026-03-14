@@ -6,7 +6,7 @@ export function Contact() {
         <div className={styles.content}>
             {contact.map((item) =>
                 item.href ? (
-                    <a key={item.label} className={styles.item} href={item.href} target={item.href.startsWith('mailto') ? undefined : '_blank'} rel="noreferrer">
+                    <a data-umami-event={item.umamiEvent} key={item.label} className={styles.item} href={item.href} target={item.href.startsWith('mailto') ? undefined : '_blank'} rel="noreferrer">
                         <div className={styles.icon} style={{ background: item.bg }}>{item.icon}</div>
                         <div>
                             <div className={styles.label}>{item.label}</div>
