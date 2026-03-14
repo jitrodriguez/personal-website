@@ -1,4 +1,4 @@
-import { useRef, KeyboardEvent, ChangeEvent, useState } from 'react'
+import { useRef, type KeyboardEvent, type ChangeEvent, useState } from 'react'
 import { useTerminal } from '../../../hooks/useTerminal'
 import { useOSStore } from '../../../store/useOSStore'
 import { useIsMobile } from '../../../hooks/useIsMobile'
