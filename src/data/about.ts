@@ -1,7 +1,7 @@
 export const about = {
     name: 'Juan Rodriguez',
     role: 'SENIOR FRONTEND ENGINEER',
-    location: 'Lima, Perú · BBVA',
+    location: 'Lima, Perú · Globant - Deloitte USA',
     avatar: '👨‍💻',
     bio: 'Frontend engineer passionate about crafting accessible, pixel-perfect interfaces where thoughtful design meets robust engineering. I care about semantics, performance budgets, and usability to build inclusive experiences.',
     stats: [

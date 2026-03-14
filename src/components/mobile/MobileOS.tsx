@@ -58,7 +58,7 @@ export function MobileOS() {
                 <div className={styles.hero}>
                     <div className={styles.heroName}>Juan<br />Rodriguez</div>
                     <div className={styles.heroRole}>SENIOR FRONTEND ENGINEER</div>
-                    <div className={styles.heroLoc}>📍 Lima, Perú · BBVA</div>
+                    <div className={styles.heroLoc}>📍 Lima, Perú · Globant - Deloitte USA</div>
                 </div>
 
                 <div className={styles.widget}>

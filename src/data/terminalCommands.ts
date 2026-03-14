@@ -19,7 +19,7 @@ export const buildCommands = (
     ],
     whoami: () => [
         '<span style="color:var(--os-accent2)">Juan Rodriguez</span> — Senior Frontend Engineer',
-        'Lima, Perú · BBVA · 4+ yrs · 95+ Lighthouse',
+        'Lima, Perú · Globant - Deloitte USA · 5+ yrs · 95+ Lighthouse',
     ],
     skills: () => [
         '<span style="color:var(--os-accent)">── Frontend ──</span>',
