@@ -14,6 +14,18 @@ export interface ProjectItem {
 
 export const projects: ProjectItem[] = [
     {
+        name: '🔥 Uy Qué Heavy',
+        desc: 'Preguntas que conectan. Conversaciones que importan. Interactive HTML demo.',
+        tags: [
+            { label: 'HTML', type: 'js' },
+            { label: 'JS', type: 'js' },
+            { label: 'CSS', type: 'js' },
+        ],
+        href: '/demos/uy-que-heavy',
+        linkText: 'Play Demo',
+        umamiEvent: 'uy-que-heavy-link',
+    },
+    {
         name: '🔌 vscode-chat-langchain-bridge',
         desc: 'npm package integrating LangChain into VSCode — AI-driven code editor functionalities.',
         tags: [

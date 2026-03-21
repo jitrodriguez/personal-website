@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>Uy Qué Heavy | Juego de Cartas</title>
+  <meta name="description" content="Juego de cartas online. Preguntas que conectan y conversaciones que importan: Friends, Love & Forever editions." />
+  <meta name="author" content="Juan Andres Rodriguez Canahuire" />
+
+  <!-- Open Graph / Redes Sociales -->
+  <meta property="og:title" content="Uy Qué Heavy | Juego de Cartas" />
+  <meta property="og:description" content="Preguntas que conectan y conversaciones que importan." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicons y Analytics -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="dfcad034-258b-4f54-beb2-c7a874acc2ac"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --friends: #E8A820;
+      --friends-dark: #C68A10;
+      --love: #8B3A8B;
+      --love-dark: #6B2A6B;
+      --forever: #7A1F3D;
+      --forever-dark: #5A0F2D;
+      --bg: #1a1008;
+      --wood: #c8a06a;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: #fff;
+    }
+
+    /* Wood texture background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(255, 255, 255, 0.015) 80px, rgba(255, 255, 255, 0.015) 81px),
+        repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(0, 0, 0, 0.03) 40px, rgba(0, 0, 0, 0.03) 41px);
+      background-color: #2a1a0a;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Hero */
+    header {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+
+    header .eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--wood);
+      opacity: 0.7;
+      margin-bottom: 12px;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 8vw, 5.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--friends) 0%, var(--love) 50%, var(--forever) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    header p {
+      margin-top: 16px;
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.5);
+      font-weight: 300;
+      letter-spacing: 0.05em;
+    }
+
+    /* Edition tabs */
+    .tabs {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 20px 40px;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      border: none;
+      border-radius: 100px;
+      padding: 10px 24px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      letter-spacing: 0.05em;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      opacity: 0.5;
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+    }
+
+    .tab:hover {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+
+    .tab.active {
+      opacity: 1;
+      transform: scale(1.08);
+    }
+
+    .tab[data-edition="friends"].active {
+      background: var(--friends);
+      color: #000;
+    }
+
+    .tab[data-edition="love"].active {
+      background: var(--love);
+    }
+
+    .tab[data-edition="forever"].active {
+      background: var(--forever);
+    }
+
+    /* Card area */
+    .stage {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 20px 60px;
+      min-height: 420px;
+    }
+
+    .card-wrap {
+      position: relative;
+      width: 260px;
+      height: 380px;
+      perspective: 1200px;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.7s cubic-bezier(0.34, 1.26, 0.64, 1);
+      cursor: pointer;
+      border-radius: 20px;
+    }
+
+    .card.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 24px;
+      box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    }
+
+    .card-back {
+      background: var(--card-color, #8B3A8B);
+    }
+
+    .card-front {
+      transform: rotateY(180deg);
+      background: var(--card-color, #8B3A8B);
+      text-align: center;
+    }
+
+    /* Card decorative border */
+    .card-face::before {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      border-radius: 12px;
+      pointer-events: none;
+    }
+
+    /* Back face content */
+    .card-back .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.05em;
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    .card-back .edition-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    .card-icon {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      filter: brightness(1.3);
+    }
+
+    .card-back .hint {
+      position: absolute;
+      bottom: 24px;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: 0.1em;
+    }
+
+    /* Front face content */
+    .card-front .question-icon {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      opacity: 0.7;
+    }
+
+    .card-front .question-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      line-height: 1.55;
+      color: #fff;
+      text-align: center;
+    }
+
+    .card-front .edition-tag {
+      position: absolute;
+      bottom: 22px;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+      font-style: italic;
+    }
+
+    /* Controls */
+    .controls {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      padding-bottom: 60px;
+      flex-wrap: wrap;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 14px;
+      padding: 14px 32px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      letter-spacing: 0.05em;
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary {
+      background: #fff;
+      color: #1a1008;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.13);
+      color: #fff;
+    }
+
+    /* Progress */
+    .progress-bar {
+      position: relative;
+      z-index: 1;
+      max-width: 300px;
+      margin: -30px auto 30px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .progress-track {
+      height: 3px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: 100px;
+      background: var(--card-color, #8B3A8B);
+      transition: width 0.5s ease, background 0.5s ease;
+    }
+
+    .progress-text {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.3);
+      margin-top: 8px;
+      letter-spacing: 0.1em;
+    }
+
+    /* Deck preview */
+    .deck-preview {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 30px 20px 60px;
+      flex-wrap: wrap;
+    }
+
+    .deck-mini {
+      width: 90px;
+      height: 130px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .deck-mini::before {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 6px;
+    }
+
+    .deck-mini:hover {
+      transform: translateY(-8px) rotate(-2deg);
+    }
+
+    .deck-mini.selected {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .deck-mini span:first-child {
+      font-size: 1.5rem;
+    }
+
+    .deck-mini .deck-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 9px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.1em;
+      text-align: center;
+      line-height: 1.2;
+      padding: 0 8px;
+    }
+
+    .deck-friends {
+      background: var(--friends);
+    }
+
+    .deck-love {
+      background: var(--love);
+    }
+
+    .deck-forever {
+      background: var(--forever);
+    }
+
+    /* Section label */
+    .section-label {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.3);
+      margin-bottom: 20px;
+    }
+
+    /* Flip animation for new card */
+    @keyframes newCard {
+      0% {
+        transform: translateY(-40px) scale(0.85);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+
+    .card-wrap.new-card {
+      animation: newCard 0.5s cubic-bezier(0.34, 1.4, 0.64, 1) forwards;
+    }
+
+    /* Floating particles */
+    .particles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      opacity: 0;
+      animation: float linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.6;
+      }
+
+      90% {
+        opacity: 0.3;
+      }
+
+      100% {
+        transform: translateY(-100px) rotate(720deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="particles" id="particles"></div>
+
+  <header>
+    <div class="eyebrow">Juego de cartas</div>
+    <h1>Uy Qué Heavy</h1>
+    <p>Preguntas que conectan. Conversaciones que importan.</p>
+  </header>
+
+  <div class="tabs">
+    <button class="tab active" data-edition="friends" onclick="setEdition('friends')">🤝 Friends</button>
+    <button class="tab" data-edition="love" onclick="setEdition('love')">💜 Love</button>
+    <button class="tab" data-edition="forever" onclick="setEdition('forever')">💍 Forever</button>
+  </div>
+
+  <div class="stage">
+    <div class="card-wrap" id="cardWrap" onclick="flipCard()">
+      <div class="card" id="card">
+        <div class="card-face card-back" id="cardBack">
+          <div class="card-icon" id="cardIcon">🤝</div>
+          <div class="brand">UY QUÉ HEAVY</div>
+          <div class="edition-label" id="editionLabel">Friends Edition</div>
+          <div class="hint">Toca para revelar</div>
+        </div>
+        <div class="card-face card-front" id="cardFront">
+          <div class="question-icon" id="questionIcon">💬</div>
+          <div class="question-text" id="questionText">¿Qué momento de tu niñez te marcó y más recuerdas con claridad?
+          </div>
+          <div class="edition-tag" id="editionTag">Friends Edition</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="progress-bar">
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill" style="width: 10%"></div>
+    </div>
+    <div class="progress-text" id="progressText">Carta 1 de 10</div>
+  </div>
+
+  <div class="controls">
+    <button class="btn btn-primary" onclick="nextCard()">Siguiente carta →</button>
+    <button class="btn btn-secondary" onclick="shuffleDeck()">🔀 Mezclar</button>
+  </div>
+
+  <div class="section-label">Elige tu edición</div>
+
+  <div class="deck-preview">
+    <div class="deck-mini deck-friends selected" id="deck-friends" onclick="setEdition('friends')">
+      <span>🤝</span>
+      <div class="deck-name">Friends Edition</div>
+    </div>
+    <div class="deck-mini deck-love" id="deck-love" onclick="setEdition('love')">
+      <span>💜</span>
+      <div class="deck-name">Love Edition</div>
+    </div>
+    <div class="deck-mini deck-forever" id="deck-forever" onclick="setEdition('forever')">
+      <span>💍</span>
+      <div class="deck-name">Forever Edition</div>
+    </div>
+  </div>
+
+  <script>
+    const data = {
+      friends: {
+        color: '#E8A820',
+        icon: '🤝',
+        label: 'Friends Edition',
+        questionIcon: '💬',
+        questions: [
+          '¿Qué momento de tu niñez te marcó y más recuerdas con claridad?',
+          '¿Cuál es el mayor riesgo que alguna vez has tomado y cómo resultó?',
+          '¿Qué parte de ti crees que nadie conoce realmente?',
+          '¿Qué harías diferente si pudieras volver a los 15 años?',
+          '¿Cuál es el miedo que más trabajo te cuesta admitir?',
+          '¿Qué persona de tu pasado te influyó más sin que lo supiera?',
+          '¿Hay algo que desearías haber dicho a alguien y nunca lo hiciste?',
+          '¿Cuándo fue la última vez que lloraste y por qué?',
+          '¿Qué momento de nuestra amistad cambió algo en ti?',
+          '¿Si supieras que no vas a fallar, qué intentarías hoy?',
+        ]
+      },
+      love: {
+        color: '#8B3A8B',
+        icon: '💜',
+        label: 'Love Edition',
+        questionIcon: '💌',
+        questions: [
+          'Mencioname un momento difícil en el que te sentiste mucho mi apoyo.',
+          '¿Qué fue lo primero que notaste de mí y que aún te enamora?',
+          '¿Hay algo que necesites de mí que nunca me hayas pedido?',
+          '¿Cuál ha sido el momento más feliz que hemos vivido juntos?',
+          '¿Qué parte de ti crees que yo aún no termino de conocer?',
+          '¿Qué cambiarias de la forma en que nos comunicamos?',
+          '¿Cuándo fue la última vez que te sentiste completamente amado/a por mí?',
+          '¿Qué tipo de amor soñabas de niño/a y sientes que tienes ahora?',
+          '¿Qué es lo que más valoras de nuestra relación hoy?',
+          '¿Hay algo que me hayas perdonado pero que aún duela un poco?',
+        ]
+      },
+      forever: {
+        color: '#7A1F3D',
+        icon: '💍',
+        label: 'Forever Edition',
+        questionIcon: '✨',
+        questions: [
+          '¿Qué cambios crees que necesitamos hacer hoy para tener el futuro que deseamos?',
+          '¿Cómo imaginas nuestra vida dentro de 10 años?',
+          '¿Qué legado quieres dejar como pareja?',
+          '¿Hay algún sueño que hayas guardado por no saber si lo compartimos?',
+          '¿Qué valores son no negociables para ti en nuestra familia?',
+          '¿Qué sacrificios estás dispuesto/a a hacer por nuestro futuro?',
+          '¿Hay algo sobre el dinero que nunca hemos hablado claramente?',
+          '¿Qué tipo de padres o compañeros de vida queremos ser?',
+          '¿Cuál es tu mayor miedo sobre nuestro futuro juntos?',
+          '¿Qué necesito yo saber de ti para amarte mejor toda la vida?',
+        ]
+      }
+    };
+
+    let currentEdition = 'friends';
+    let currentIndex = 0;
+    let isFlipped = false;
+    let shuffled = {};
+
+    function shuffle(arr) {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    // Init shuffled decks
+    Object.keys(data).forEach(k => { shuffled[k] = shuffle(data[k].questions); });
+
+    function setEdition(edition) {
+      currentEdition = edition;
+      currentIndex = 0;
+      isFlipped = false;
+
+      // Reset card
+      document.getElementById('card').classList.remove('flipped');
+
+      // Update colors
+      const col = data[edition].color;
+      document.documentElement.style.setProperty('--card-color', col);
+      document.getElementById('cardBack').style.background = col;
+      document.getElementById('cardFront').style.background = col;
+      document.getElementById('progressFill').style.background = col;
+
+      // Update content
+      document.getElementById('cardIcon').textContent = data[edition].icon;
+      document.getElementById('editionLabel').textContent = data[edition].label;
+      document.getElementById('editionTag').textContent = data[edition].label;
+      document.getElementById('questionIcon').textContent = data[edition].questionIcon;
+      document.getElementById('questionText').textContent = shuffled[edition][0];
+
+      // Update tabs
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelector(`[data-edition="${edition}"]`).classList.add('active');
+
+      // Update decks
+      document.querySelectorAll('.deck-mini').forEach(d => d.classList.remove('selected'));
+      document.getElementById(`deck-${edition}`).classList.add('selected');
+
+      updateProgress();
+      animateCard();
+      spawnParticles(col);
+    }
+
+    function flipCard() {
+      isFlipped = !isFlipped;
+      document.getElementById('card').classList.toggle('flipped', isFlipped);
+    }
+
+    function nextCard() {
+      const qs = shuffled[currentEdition];
+      currentIndex = (currentIndex + 1) % qs.length;
+      isFlipped = false;
+      document.getElementById('card').classList.remove('flipped');
+      setTimeout(() => {
+        document.getElementById('questionText').textContent = qs[currentIndex];
+      }, 100);
+      updateProgress();
+      animateCard();
+    }
+
+    function shuffleDeck() {
+      shuffled[currentEdition] = shuffle(data[currentEdition].questions);
+      currentIndex = 0;
+      isFlipped = false;
+      document.getElementById('card').classList.remove('flipped');
+      document.getElementById('questionText').textContent = shuffled[currentEdition][0];
+      updateProgress();
+      animateCard();
+    }
+
+    function updateProgress() {
+      const total = shuffled[currentEdition].length;
+      const pct = ((currentIndex + 1) / total) * 100;
+      document.getElementById('progressFill').style.width = pct + '%';
+      document.getElementById('progressText').textContent = `Carta ${currentIndex + 1} de ${total}`;
+    }
+
+    function animateCard() {
+      const wrap = document.getElementById('cardWrap');
+      wrap.classList.remove('new-card');
+      void wrap.offsetWidth;
+      wrap.classList.add('new-card');
+    }
+
+    function spawnParticles(color) {
+      const container = document.getElementById('particles');
+      for (let i = 0; i < 8; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.style.cssText = `
+      left: ${Math.random() * 100}%;
+      background: ${color};
+      width: ${2 + Math.random() * 5}px;
+      height: ${2 + Math.random() * 5}px;
+      animation-duration: ${4 + Math.random() * 6}s;
+      animation-delay: ${Math.random() * 2}s;
+    `;
+        container.appendChild(p);
+        setTimeout(() => p.remove(), 10000);
+      }
+    }
+
+    // Init
+    setEdition('friends');
+  </script>
+</body>
+
+</html>
