@@ -1,2 +1,1 @@
-# Add authorized app ad sellers here.
 google.com, pub-1342081970793813, DIRECT, f08c47fec0942fa0
